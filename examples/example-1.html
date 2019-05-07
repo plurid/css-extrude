@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Extrude</title>
+
+        <style>
+            html, body {
+                background: rgb(48, 61, 77);
+                margin: 0;
+                display: grid;
+                place-content: center;
+                height: 100%;
+            }
+
+            #simple-extrude-20px {
+                /*
+                    // the depth of the 3D object
+                    extrude: 30px;
+                */
+                height: 200px;
+                width: 400px;
+                position: relative;
+                transform-style: preserve-3d;
+                transform: rotateX(-30deg) rotateY(-30deg);
+                /* animation: spin 5s infinite; */
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotateX(-30deg) rotateY(0deg);
+                }
+                100% {
+                    transform: rotateX(-0deg) rotateY(360deg);
+                }
+            }
+
+            .face {
+                position: absolute;
+                background-color: slateblue;
+                /* border: 1px solid black; */
+                width: 240px;
+                height: 240px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 30px;
+                display: grid;
+                place-content: center;
+                color: white;
+            }
+
+            .front {
+                transform: translateZ(0px);
+                width: 400px;
+                height: 200px;
+            }
+
+            .back {
+                transform: rotateY(180deg) translateZ(30px);
+                width: 400px;
+                height: 200px;
+                background-color: rgb(89, 75, 175);
+            }
+
+            .left {
+                transform: rotateY(-90deg) translateZ(15px) translateX(-15px);
+                height: 200px;
+                width: 30px;
+                background-color: rgb(84, 70, 172);
+            }
+
+            .right {
+                transform: rotateY(90deg) translateZ(385px) translateX(15px);
+                height: 200px;
+                width: 30px;
+                background-color: rgb(84, 70, 172);
+            }
+
+            .top {
+                transform: rotateX(90deg) translateZ(15px) translateY(-15px);
+                height: 30px;
+                width: 400px;
+                background-color: rgb(73, 60, 158);
+            }
+
+            .bottom {
+                transform: rotateX(-90deg) translateZ(185px) translateY(15px) rotate(180deg);
+                height: 30px;
+                width: 400px;
+                background-color: rgb(54, 44, 121);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="simple-extrude-20px">
+            <div class="face front">Front</div>
+            <div class="face back">Back</div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+    </body>
+</html>
