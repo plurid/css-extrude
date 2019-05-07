@@ -51,6 +51,20 @@ CSS Extrude Cut is the reverse operation.
     // Example 1
 
     // CSS
+    #simple-extrude {
+        height: 200px;
+        width: 400px;
+        background-color: slateblue; // the color of the front face
+        extrude: 30px; // the depth of the extrusion
+    }
+
+    // HTML
+    <div id="simple-extrude"></div>
+
+
+    // Example 2
+
+    // CSS
     #outer {
         height: 200px;
         width: 400px;
